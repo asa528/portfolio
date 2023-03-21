@@ -5,9 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TERAGUCHI's PORTFOLIO</title>
-  <link rel="stylesheet" href="css/destyle.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Font-->
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png"> 
+  <!-- CSS stylesheet -->
+  <link rel="stylesheet" href="/css/destyle.css">
+  <link rel="stylesheet" href="/style.css">
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Noto+Sans:wght@100&family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -15,28 +20,41 @@
 <body>
   <div class="global-container">
 
-    <header id="top" class="header">
+    <header class="header">
       <div class="header__logo"><img src="img/logo.png" alt=""></div>
       <nav class="header__nav">
         <ul class="header__ul">
           <li class="header__li"><a href="#about">ABOUT</a></li>
-          <li class="header__li"><a href="contact.html">CONTACT</a></li>
+          <li class="header__li"><a href="#access">ACCESS</a></li>
         </ul>
       </nav>
     </header>
   
-    <main class="main">
+    <main id="top" class="main">
       <div class="main-visual">
         <div class="catch">
           <h1 class="catch__title">TERAGUCHI's Portfolio</h1>
-          <div class="catch__btn">
-            <a class="catch__text" href="contact.html">CONTACT</a>
+
+          <!-- モーダルを開くボタン -->
+          <div class="modal-open">CONTACT</div>
+
+          <!-- モーダル本体 -->
+          <div class="modal-container">
+            <div class="modal-body">
+              <!-- 閉じるボタン -->
+              <div class="modal-close">×</div>
+              <!-- モーダル内のコンテンツ -->
+              <div class="modal-content">
+                <p>準備中…</p>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
 
       <section id="about">
-        <div class="about"><h2 class="about__title">ABOUT</h2></div>
+        <div class="section-inner"><h2 class="section-title">ABOUT</h2></div>
         
         <div class="container">
           <div class="inner">
@@ -56,7 +74,7 @@
                   <span class="desc__label">HTML/CSS</span>
                 </div>
                 <div class="desc__text">
-                  <p>開発チームの一員として、<br>要件定義からテスト設計まで携わりました。</p>
+                  <p class="desc__p">開発チームの一員として、<br>要件定義からテスト設計まで携わりました。</p>
                 </div>
               </div>
             </div>
@@ -75,8 +93,8 @@
                   <span class="desc__label">Keyword Planner</span>
                 </div>
                 <div class="desc__text">
-                  <p>個人でアフィリエイトブログを運営中。<br>(月間1800PV程度)</p>
-                  <p>競合リサーチ・ブログ構成期間含め半年かけて成約実績を得ることができました。</>
+                  <p class="desc__p">個人でアフィリエイトブログを運営中。<br>(月間1800PV程度)</p>
+                  <p class="desc__p">競合リサーチ・ブログ構成期間含め半年かけて成約実績を得ることができました。</>
                 </div>
               </div>
             </div>
@@ -96,9 +114,9 @@
                 </div>
                 <div class="desc__text">
                   <ul>
-                    <li class="desc__li"><a class="desc__a" href="https://www.udemy.com/share/102AXT3@weWslojfD9actfRRa1-vslgQAQC2XORonqjuX6vB_l2bkon_IPxuQLstkZ_IybnisA==/">Udemy</a>：HTML,CSS,JavaScriptの基礎と応用</li>
+                    <li class="desc__li"><a class="desc__a" href="https://www.udemy.com/share/102zAI3@Lxjd12MSCSW5zDPiUDTxIp6e6jMaNXvWuqZRyWwyEsXul_oU1gCCq9GDrptaFprtDA==/">Udemy</a>：CSS,JavaScriptの基礎と応用</li>
                     <li class="desc__li"><a class="desc__a" href="https://www.sbcr.jp/product/4815609092/">Webデザイン良質見本表</a></li>
-                    <li class="desc__li"><a class="desc__a" href="https://webdesigner-go.com/coding-practice/">無料コーディング練習所</a>：jQuery</li>
+                    <li class="desc__li"><a class="desc__a" href="https://webdesigner-go.com/coding-practice/">無料コーディング練習所</a></li>
                     <li class="desc__li"><a class="desc__a" href="https://www.adobe.com/jp/">Adobe</a>：体験版を触った程度ですが、磨いていきたいスキルです</li>
                   </ul>
                 </div>
@@ -108,6 +126,13 @@
           </div>
         </div>
       </section>
+
+      <section id="access" class="access">
+        <div class="container">
+          <div class="section-inner"><h2 class="section-title">ACCESS</h2></div>
+          <iframe class="access__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5986.075106530292!2d139.35564588021208!3d35.7159234362216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191fd73825425b%3A0x200175e9f52776af!2z5pit5bO26aeF!5e0!3m2!1sja!2sjp!4v1679411100235!5m2!1sja!2sjp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div >
+      </section>
     </main>
   
     <footer class="footer">
@@ -115,11 +140,13 @@
         <ul class="footer__ul">
           <li class="footer__li"><a href="#top">TOP</a></li>
           <li class="footer__li"><a href="#about">ABOUT</a></li>
-          <li class="footer__li"><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
       <p class="footer__copy">&copy;TERAGUCHI's Portfolio</p>
     </footer>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

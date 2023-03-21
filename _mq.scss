@@ -1,10 +1,5 @@
 $breakpoints: (
-  // スマホサイズ
-  'sp': 'screen and (max-width: 480px)',
-  // タブレット(兼PC分割サイズ)
-  'tb': 'screen and (max-width: 960px)',
-  // PC(兼タブレット横向きサイズ)
-  'pc': 'screen and (max-width: 1280px)',
+  'sp': 'screen and (max-width: 640px)',
 ) !default;
 
 @mixin mq($breakpoint: pc) {

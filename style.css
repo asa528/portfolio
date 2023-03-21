@@ -48,18 +48,19 @@ img {
   align-items: center;
   padding: 10px 60px;
   z-index: 100;
+  box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .header {
-    padding: 0 30px;
+    padding: 12px 25px;
   }
 }
 .header__logo {
-  width: 150px;
+  width: 120px;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .header__logo {
-    width: 120px;
+    width: 95px;
   }
 }
 .header__ul {
@@ -70,6 +71,12 @@ img {
   color: var(--text-color);
   font-weight: bold;
   transition: all 0.2s;
+}
+@media screen and (max-width: 640px) {
+  .header__li {
+    margin-right: 9px;
+    font-size: 12px;
+  }
 }
 .header__li:last-child {
   margin-right: 0;
@@ -84,9 +91,13 @@ img {
 .main {
   font-size: 14px;
 }
-.main p {
-  letter-spacing: 0.05em;
-  margin-bottom: 1em;
+.main .section-inner {
+  padding: 60px 0;
+}
+.main .section-title {
+  font-size: 26px;
+  color: var(--text-color);
+  text-align: center;
 }
 .main .main-visual {
   display: flex;
@@ -102,14 +113,15 @@ img {
 .main .main-visual .catch {
   color: #fff;
   font-weight: bold;
+  text-align: center;
 }
 .main .main-visual .catch__title {
   font-size: 40px;
   margin-bottom: 5px;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .main .main-visual .catch__title {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
 .main .main-visual .catch__btn {
@@ -123,24 +135,15 @@ img {
   transition: all 0.3s;
   color: #fff;
   cursor: pointer;
-  margin-left: 30%;
 }
 .main .main-visual .catch__btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
-}
-.main .about {
-  padding: 60px 0;
-}
-.main .about__title {
-  font-size: 26px;
-  color: var(--text-color);
-  text-align: center;
 }
 .main .inner {
   display: flex;
   flex-flow: wrap;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .main .inner {
     flex-direction: row;
     flex-wrap: wrap;
@@ -148,11 +151,11 @@ img {
 }
 .main .item {
   margin-bottom: 30px;
-  width: calc((100% - 60px) / 3); /*画面いっぱいから、containerで指定した左右30pxの余白を引いた*/
+  width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 640px) {
   .main .item {
     width: 100%;
     margin-right: 0;
@@ -163,6 +166,7 @@ img {
 }
 .main .item__img {
   margin-bottom: 12px;
+  box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
 }
 .main .item .desc {
   padding: 15px;
@@ -197,6 +201,22 @@ img {
   font-family: "Roboto", sans-serif;
   line-height: 1.4em;
 }
+.main .item .desc__p {
+  letter-spacing: 0.05em;
+  margin-bottom: 1em;
+}
+.main .access {
+  text-align: center;
+}
+.main .access__iframe {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 640px) {
+  .main .access__iframe {
+    width: 90%;
+    height: 300px;
+  }
+}
 
 /*--------------------------------
  フッター
@@ -220,9 +240,15 @@ img {
 .footer__li {
   color: #fff;
   font-weight: bold;
-  margin-right: 15px;
+  margin-right: 20px;
   font-size: 20px;
   transition: all 0.3s;
+}
+@media screen and (max-width: 640px) {
+  .footer__li {
+    margin-right: 6px;
+    font-size: 15px;
+  }
 }
 .footer__li:last-child {
   margin-right: 0;
@@ -237,4 +263,89 @@ img {
   padding-bottom: 20px;
   padding-top: 0;
   font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 640px) {
+  .footer__copy {
+    font-size: 10px;
+  }
+}
+
+/*--------------------------------
+ モーダル
+---------------------------------*/
+/*モーダルを開くボタン*/
+.modal-open {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: 0.9px solid #fff;
+  padding: 8px 36px;
+  margin: 10px auto;
+  transition: all 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*モーダル本体の指定 + モーダル外側の背景の指定*/
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+/*モーダル本体の擬似要素の指定*/
+.modal-container:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+/*モーダル本体に「active」クラス付与した時のスタイル*/
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*モーダル枠の指定*/
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 500px;
+  width: 90%;
+}
+
+/*モーダルを閉じるボタンの指定*/
+.modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*モーダル内のコンテンツの指定*/
+.modal-content {
+  background: #fff;
+  text-align: center;
+  padding: 30px;
+  color: var(--text-color);
 }/*# sourceMappingURL=style.css.map */
