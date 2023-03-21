@@ -52,7 +52,7 @@ img {
   box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
 
   @include mq(sp) {
-    padding: 12px 25px;
+    padding: 20px 25px;
   }
 
   &__logo {
@@ -97,12 +97,20 @@ img {
 
   .section-inner {
     padding: 60px 0;
+
+    @include mq(sp) {
+      padding: 40px 0;
+    }
   }
 
   .section-title {
     font-size: 26px;
     color: var(--text-color);
     text-align: center;
+
+    @include mq(sp) {
+      font-size: 23px;
+    }
   }
 
   .main-visual {
@@ -113,7 +121,7 @@ img {
     background-position: center center;
     background-size: cover;
     height: 600px;
-    background-image: url(img/pc_main-visual.jpg);
+    background-image: url(img/pc_main-visual.webp);
     opacity: 90%;
 
     .catch {
@@ -165,9 +173,11 @@ img {
     margin-right: 30px;
     margin-bottom: 30px;
 
+
     @include mq(sp) {
       width: 100%;
       margin-right: 0;
+      margin-bottom: 8px;
     }
 
     &:last-child {
@@ -175,8 +185,14 @@ img {
     }
 
     &__img {
+      margin: 0 auto;
       margin-bottom: 12px;
-      box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
+      box-shadow: 3px 3px 21px rgba(0, 0, 0, 0.16);
+
+      @include mq(sp) {
+        width: 90%;
+      }
+  
     }
 
     .desc {
